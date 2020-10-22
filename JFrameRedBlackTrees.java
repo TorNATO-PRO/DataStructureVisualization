@@ -20,23 +20,24 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        TraversalGroup = new javax.swing.ButtonGroup();
+        DeleteButton = new javax.swing.JButton();
+        SearchButton = new javax.swing.JButton();
+        InsertButton = new javax.swing.JButton();
+        TraverseButton = new javax.swing.JButton();
+        PreOrderButton = new javax.swing.JRadioButton();
+        InOrderButton = new javax.swing.JRadioButton();
+        PostOrderButton = new javax.swing.JRadioButton();
+        TreeTraversalsLabel = new javax.swing.JLabel();
+        PanelForDisplaying = new javax.swing.JPanel();
+        ScollPaneForPositioning = new javax.swing.JScrollPane();
+        TextAreaForDescription = new javax.swing.JTextArea();
+        DescriptionLabel = new javax.swing.JLabel();
+        InsertUserInputField = new javax.swing.JTextField();
+        DeleteUserInputField = new javax.swing.JTextField();
+        SearchUserInputField = new javax.swing.JTextField();
+        BlackTreesLabel = new javax.swing.JLabel();
+        RedTreesLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(900, 780));
@@ -45,133 +46,137 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(900, 780));
 
-        jButton1.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
-        jButton1.setText("Delete");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        DeleteButton.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
+        DeleteButton.setText("Delete");
+        DeleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                DeleteButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
-        jButton2.setText("Search");
-        jButton2.setActionCommand("Search");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        SearchButton.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
+        SearchButton.setText("Search");
+        SearchButton.setActionCommand("Search");
+        SearchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                SearchButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
-        jButton3.setText("Insert");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        InsertButton.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
+        InsertButton.setText("Insert");
+        InsertButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                InsertButtonActionPerformed(evt);
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
-        jButton4.setText("Traverse");
-        jButton4.setName("Traverse"); // NOI18N
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        TraverseButton.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
+        TraverseButton.setText("Traverse");
+        TraverseButton.setName("Traverse"); // NOI18N
+        TraverseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                TraverseButtonActionPerformed(evt);
             }
         });
 
-        jRadioButton1.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        jRadioButton1.setForeground(new java.awt.Color(152, 30, 50));
-        jRadioButton1.setText("Pre-Order");
+        TraversalGroup.add(PreOrderButton);
+        PreOrderButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        PreOrderButton.setForeground(new java.awt.Color(152, 30, 50));
+        PreOrderButton.setText("Pre-Order");
 
-        jRadioButton2.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        jRadioButton2.setForeground(new java.awt.Color(152, 30, 50));
-        jRadioButton2.setText("In-Order");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        TraversalGroup.add(InOrderButton);
+        InOrderButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        InOrderButton.setForeground(new java.awt.Color(152, 30, 50));
+        InOrderButton.setText("In-Order");
+        InOrderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                InOrderButtonActionPerformed(evt);
             }
         });
 
-        jRadioButton3.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        jRadioButton3.setForeground(new java.awt.Color(152, 30, 50));
-        jRadioButton3.setText("Post-Order");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        TraversalGroup.add(PostOrderButton);
+        PostOrderButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        PostOrderButton.setForeground(new java.awt.Color(152, 30, 50));
+        PostOrderButton.setText("Post-Order");
+        PostOrderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
+                PostOrderButtonActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(83, 86, 90));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setLabelFor(jRadioButton1);
-        jLabel1.setText("Tree Traversals");
+        TreeTraversalsLabel.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        TreeTraversalsLabel.setForeground(new java.awt.Color(83, 86, 90));
+        TreeTraversalsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TreeTraversalsLabel.setLabelFor(PreOrderButton);
+        TreeTraversalsLabel.setText("Tree Traversals");
 
-        jPanel1.setBackground(new java.awt.Color(254, 254, 254));
+        PanelForDisplaying.setBackground(new java.awt.Color(254, 254, 254));
 
-        jTextArea2.setBackground(new java.awt.Color(167, 169, 172));
-        jTextArea2.setColumns(20);
-        jTextArea2.setForeground(java.awt.Color.white);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        TextAreaForDescription.setEditable(false);
+        TextAreaForDescription.setBackground(new java.awt.Color(167, 169, 172));
+        TextAreaForDescription.setColumns(20);
+        TextAreaForDescription.setForeground(java.awt.Color.white);
+        TextAreaForDescription.setRows(5);
+        ScollPaneForPositioning.setViewportView(TextAreaForDescription);
 
-        jLabel4.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(152, 30, 50));
-        jLabel4.setText("Description");
+        DescriptionLabel.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        DescriptionLabel.setForeground(new java.awt.Color(152, 30, 50));
+        DescriptionLabel.setText("Description");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout PanelForDisplayingLayout = new javax.swing.GroupLayout(PanelForDisplaying);
+        PanelForDisplaying.setLayout(PanelForDisplayingLayout);
+        PanelForDisplayingLayout.setHorizontalGroup(
+                PanelForDisplayingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelForDisplayingLayout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel4)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(PanelForDisplayingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(DescriptionLabel)
+                                        .addComponent(ScollPaneForPositioning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(36, 36, 36))
         );
-        jPanel1Layout.setVerticalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        PanelForDisplayingLayout.setVerticalGroup(
+                PanelForDisplayingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelForDisplayingLayout.createSequentialGroup()
                                 .addContainerGap(434, Short.MAX_VALUE)
-                                .addComponent(jLabel4)
+                                .addComponent(DescriptionLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ScollPaneForPositioning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(25, 25, 25))
         );
 
-        jTextField1.setBackground(new java.awt.Color(254, 254, 254));
-        jTextField1.setToolTipText("");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        InsertUserInputField.setBackground(new java.awt.Color(254, 254, 254));
+        InsertUserInputField.setToolTipText("");
+        InsertUserInputField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                InsertUserInputFieldActionPerformed(evt);
             }
         });
 
-        jTextField2.setBackground(new java.awt.Color(254, 254, 254));
-        jTextField2.setToolTipText("");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        DeleteUserInputField.setBackground(new java.awt.Color(254, 254, 254));
+        DeleteUserInputField.setToolTipText("");
+        DeleteUserInputField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                DeleteUserInputFieldActionPerformed(evt);
             }
         });
 
-        jTextField3.setBackground(new java.awt.Color(254, 254, 254));
-        jTextField3.setToolTipText("");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        SearchUserInputField.setBackground(new java.awt.Color(254, 254, 254));
+        SearchUserInputField.setToolTipText("");
+        SearchUserInputField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                SearchUserInputFieldActionPerformed(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Ubuntu Light", 1, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(83, 86, 90));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("-Black Trees");
+        BlackTreesLabel.setFont(new java.awt.Font("SansSerif", 1, 48)); // NOI18N
+        BlackTreesLabel.setForeground(new java.awt.Color(83, 86, 90));
+        BlackTreesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BlackTreesLabel.setText("-Black Trees");
 
-        jLabel3.setFont(new java.awt.Font("Ubuntu Light", 1, 48)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(152, 30, 50));
-        jLabel3.setText("Red");
+        RedTreesLabel.setFont(new java.awt.Font("SansSerif", 1, 48)); // NOI18N
+        RedTreesLabel.setForeground(new java.awt.Color(152, 30, 50));
+        RedTreesLabel.setText("Red");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -179,111 +184,111 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(PanelForDisplaying, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addContainerGap())
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(24, 24, 24)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(InsertUserInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton3)
+                                .addComponent(InsertButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(SearchUserInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton2)
+                                .addComponent(SearchButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(DeleteUserInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                                .addComponent(DeleteButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jRadioButton3)
-                                                        .addComponent(jRadioButton1))
+                                                        .addComponent(PostOrderButton)
+                                                        .addComponent(PreOrderButton))
                                                 .addGap(138, 138, 138))
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jRadioButton2)
+                                                .addComponent(InOrderButton)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jButton4)
+                                                .addComponent(TraverseButton)
                                                 .addGap(34, 34, 34))))
                         .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2)
-                                .addGap(129, 129, 129)
-                                .addComponent(jLabel1)
-                                .addGap(119, 119, 119))
+                                .addComponent(RedTreesLabel)
+                                .addGap(1, 1, 1)
+                                .addComponent(BlackTreesLabel)
+                                .addGap(119, 119, 119)
+                                .addComponent(TreeTraversalsLabel)
+                                .addGap(118, 118, 118))
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(PanelForDisplaying, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addGap(24, 24, 24)
-                                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jRadioButton1)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(TreeTraversalsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(12, 12, 12)
+                                                .addComponent(PreOrderButton)
                                                 .addGap(18, 18, 18)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(jRadioButton2)
-                                                        .addComponent(jButton4))
+                                                        .addComponent(InOrderButton)
+                                                        .addComponent(TraverseButton))
                                                 .addGap(18, 18, 18)
-                                                .addComponent(jRadioButton3))
+                                                .addComponent(PostOrderButton))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(jLabel3))
+                                                        .addComponent(BlackTreesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(RedTreesLabel))
                                                 .addGap(32, 32, 32)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(jButton3)
-                                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(jButton2)
-                                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(jButton1))))
+                                                        .addComponent(InsertUserInputField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(InsertButton)
+                                                        .addComponent(SearchUserInputField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(SearchButton)
+                                                        .addComponent(DeleteUserInputField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(DeleteButton))))
                                 .addGap(73, 73, 73))
         );
 
         pack();
     }// </editor-fold>
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void InsertButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void TraverseButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void InOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void InsertUserInputFieldActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void DeleteUserInputFieldActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void SearchUserInputFieldActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void PostOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
@@ -323,22 +328,23 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JLabel BlackTreesLabel;
+    private javax.swing.JButton DeleteButton;
+    private javax.swing.JTextField DeleteUserInputField;
+    private javax.swing.JLabel DescriptionLabel;
+    private javax.swing.JRadioButton InOrderButton;
+    private javax.swing.JButton InsertButton;
+    private javax.swing.JTextField InsertUserInputField;
+    private javax.swing.JPanel PanelForDisplaying;
+    private javax.swing.JRadioButton PostOrderButton;
+    private javax.swing.JRadioButton PreOrderButton;
+    private javax.swing.JLabel RedTreesLabel;
+    private javax.swing.JScrollPane ScollPaneForPositioning;
+    private javax.swing.JButton SearchButton;
+    private javax.swing.JTextField SearchUserInputField;
+    private javax.swing.JTextArea TextAreaForDescription;
+    private javax.swing.ButtonGroup TraversalGroup;
+    private javax.swing.JButton TraverseButton;
+    private javax.swing.JLabel TreeTraversalsLabel;
     // End of variables declaration
 }
