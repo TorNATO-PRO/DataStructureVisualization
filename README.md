@@ -1,2 +1,3 @@
-# Data Structure Visualization
-Eh, I haven't decided what im going to do yet
+# Red Black Tree Visualization
+
+Visualizes operations pertaining to a red black tree!
