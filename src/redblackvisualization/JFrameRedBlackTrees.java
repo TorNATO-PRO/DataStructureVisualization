@@ -5,6 +5,10 @@
  */
 package redblackvisualization;
 
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.List;
+import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.AbstractButton;
 
@@ -15,6 +19,7 @@ import javax.swing.AbstractButton;
 public class JFrameRedBlackTrees extends javax.swing.JFrame {
     
     private RedBlackTree rbTree;
+    private ArrayList<Graphics2D> objects;
 
     /**
      * Creates new form JFrameRedBlackTrees
@@ -59,7 +64,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(900, 780));
 
-        DeleteButton.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
+        DeleteButton.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         DeleteButton.setText("Delete");
         DeleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,7 +72,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
             }
         });
 
-        SearchButton.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
+        SearchButton.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         SearchButton.setText("Search");
         SearchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,7 +80,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
             }
         });
 
-        InsertButton.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
+        InsertButton.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         InsertButton.setText("Insert");
         InsertButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,7 +88,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
             }
         });
 
-        TraverseButton.setFont(new java.awt.Font("Ubuntu", 0, 15)); // NOI18N
+        TraverseButton.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         TraverseButton.setText("Traverse");
         TraverseButton.setName("Traverse"); // NOI18N
         TraverseButton.addActionListener(new java.awt.event.ActionListener() {
@@ -93,12 +98,12 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         });
 
         TraversalGroup.add(PreOrderButton);
-        PreOrderButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        PreOrderButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         PreOrderButton.setForeground(new java.awt.Color(152, 30, 50));
         PreOrderButton.setText("Pre-Order");
 
         TraversalGroup.add(InOrderButton);
-        InOrderButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        InOrderButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         InOrderButton.setForeground(new java.awt.Color(152, 30, 50));
         InOrderButton.setText("In-Order");
         InOrderButton.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +113,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         });
 
         TraversalGroup.add(PostOrderButton);
-        PostOrderButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        PostOrderButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         PostOrderButton.setForeground(new java.awt.Color(152, 30, 50));
         PostOrderButton.setText("Post-Order");
         PostOrderButton.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +122,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
             }
         });
 
-        TreeTraversalsLabel.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        TreeTraversalsLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         TreeTraversalsLabel.setForeground(new java.awt.Color(83, 86, 90));
         TreeTraversalsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TreeTraversalsLabel.setLabelFor(PreOrderButton);
@@ -128,11 +133,12 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         TextAreaForDescription.setEditable(false);
         TextAreaForDescription.setBackground(new java.awt.Color(167, 169, 172));
         TextAreaForDescription.setColumns(20);
+        TextAreaForDescription.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         TextAreaForDescription.setForeground(java.awt.Color.white);
         TextAreaForDescription.setRows(5);
         ScollPaneForPositioning.setViewportView(TextAreaForDescription);
 
-        DescriptionLabel.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        DescriptionLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         DescriptionLabel.setForeground(new java.awt.Color(152, 30, 50));
         DescriptionLabel.setText("Description");
 
@@ -181,12 +187,12 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
             }
         });
 
-        BlackTreesLabel.setFont(new java.awt.Font("SansSerif", 1, 48)); // NOI18N
+        BlackTreesLabel.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         BlackTreesLabel.setForeground(new java.awt.Color(83, 86, 90));
         BlackTreesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         BlackTreesLabel.setText("-Black Trees");
 
-        RedTreesLabel.setFont(new java.awt.Font("SansSerif", 1, 48)); // NOI18N
+        RedTreesLabel.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         RedTreesLabel.setForeground(new java.awt.Color(152, 30, 50));
         RedTreesLabel.setText("Red");
 
@@ -211,7 +217,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
                 .addComponent(DeleteUserInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(DeleteButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,9 +232,9 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(RedTreesLabel)
-                .addGap(1, 1, 1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BlackTreesLabel)
-                .addGap(102, 102, 102)
+                .addGap(135, 135, 135)
                 .addComponent(TreeTraversalsLabel)
                 .addGap(118, 118, 118))
         );
@@ -298,6 +304,9 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         } else if (PostOrderButton.isSelected()) {
             rbTree.postorder();
         }    
+        Graphics2D gfx = (Graphics2D) PanelForDisplaying.getGraphics();
+        gfx.drawOval(250, 250, 100, 100);
+        
     }//GEN-LAST:event_TraverseButtonActionPerformed
 
     private void InOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InOrderButtonActionPerformed
@@ -320,6 +329,10 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PostOrderButtonActionPerformed
 
+    public void paintComponent(Graphics g) {
+        super.paintComponents(g);
+        g.draw3DRect(10, 10, 20, 0, true);
+    }
     /**
      * @param args the command line arguments
      */
@@ -353,6 +366,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
                 new JFrameRedBlackTrees().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -363,7 +377,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
     private javax.swing.JRadioButton InOrderButton;
     private javax.swing.JButton InsertButton;
     private javax.swing.JTextField InsertUserInputField;
-    private javax.swing.JPanel PanelForDisplaying;
+    public javax.swing.JPanel PanelForDisplaying;
     private javax.swing.JRadioButton PostOrderButton;
     private javax.swing.JRadioButton PreOrderButton;
     private javax.swing.JLabel RedTreesLabel;
