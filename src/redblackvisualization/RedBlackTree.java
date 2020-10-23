@@ -1,14 +1,19 @@
 package redblackvisualization;
 
 // Red Black Tree implementation in Java
+
+import java.awt.Graphics2D;
+import javax.swing.JPanel;
+
 // Author: Algorithm Tutor
 // Tutorial URL: https://algorithmtutor.com/Data-Structures/Tree/Red-Black-Trees/
 
 // class RedBlackTree implements the operations in Red Black Tree
 public class RedBlackTree {
   private Node root;
-  private Node TNULL;
-
+  private Node TNULL;  
+  private Graphics2D canvasPanel;
+          
   private void preOrderHelper(Node node) {
     if (node != TNULL) {
       System.out.print(node.data + " ");
@@ -138,12 +143,13 @@ public class RedBlackTree {
 
   //constructor
 
-  public RedBlackTree() {
+  public RedBlackTree(Graphics2D drawingPanel) {
     TNULL = new Node();
     TNULL.color = 0;
     TNULL.left = null;
     TNULL.right = null;
     root = TNULL;
+    this.canvasPanel = drawingPanel;
   }
 
   // Pre-Order traversal
@@ -264,7 +270,7 @@ public class RedBlackTree {
   // insert the key to the tree in its appropriate position
   // and fix the tree
   public void insert(int key) {
-
+    canvasPanel.drawOval(250, 250, 100, 100);
     // Ordinary Binary Search Insertion
     Node node = new Node();
     node.parent = null;

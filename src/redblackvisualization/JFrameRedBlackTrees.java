@@ -19,14 +19,13 @@ import javax.swing.AbstractButton;
 public class JFrameRedBlackTrees extends javax.swing.JFrame {
     
     private RedBlackTree rbTree;
-    private ArrayList<Graphics2D> objects;
 
     /**
      * Creates new form JFrameRedBlackTrees
      */
     public JFrameRedBlackTrees() {
-        this.rbTree = new RedBlackTree();
         initComponents();
+        this.rbTree = new RedBlackTree((Graphics2D) PanelForDisplaying.getGraphics());
     }
 
     /**
@@ -292,7 +291,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         // TODO add your handling code here:
         int InsertThis = Integer.parseInt(InsertUserInputField.getText());
         InsertUserInputField.setText("");
-        rbTree.searchTree(InsertThis);
+        rbTree.insert(InsertThis);
     }//GEN-LAST:event_InsertButtonActionPerformed
 
     private void TraverseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraverseButtonActionPerformed
@@ -304,9 +303,6 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         } else if (PostOrderButton.isSelected()) {
             rbTree.postorder();
         }    
-        Graphics2D gfx = (Graphics2D) PanelForDisplaying.getGraphics();
-        gfx.drawOval(250, 250, 100, 100);
-        
     }//GEN-LAST:event_TraverseButtonActionPerformed
 
     private void InOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InOrderButtonActionPerformed
