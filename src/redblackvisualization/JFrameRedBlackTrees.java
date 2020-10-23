@@ -47,14 +47,14 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         PostOrderButton = new javax.swing.JRadioButton();
         TreeTraversalsLabel = new javax.swing.JLabel();
         PanelForDisplaying = new javax.swing.JPanel();
-        ScollPaneForPositioning = new javax.swing.JScrollPane();
-        TextAreaForDescription = new javax.swing.JTextArea();
-        DescriptionLabel = new javax.swing.JLabel();
         InsertUserInputField = new javax.swing.JTextField();
         DeleteUserInputField = new javax.swing.JTextField();
         SearchUserInputField = new javax.swing.JTextField();
         BlackTreesLabel = new javax.swing.JLabel();
         RedTreesLabel = new javax.swing.JLabel();
+        DescriptionLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(900, 780));
@@ -129,37 +129,15 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
 
         PanelForDisplaying.setBackground(new java.awt.Color(254, 254, 254));
 
-        TextAreaForDescription.setEditable(false);
-        TextAreaForDescription.setBackground(new java.awt.Color(167, 169, 172));
-        TextAreaForDescription.setColumns(20);
-        TextAreaForDescription.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        TextAreaForDescription.setForeground(java.awt.Color.white);
-        TextAreaForDescription.setRows(5);
-        ScollPaneForPositioning.setViewportView(TextAreaForDescription);
-
-        DescriptionLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        DescriptionLabel.setForeground(new java.awt.Color(152, 30, 50));
-        DescriptionLabel.setText("Description");
-
         javax.swing.GroupLayout PanelForDisplayingLayout = new javax.swing.GroupLayout(PanelForDisplaying);
         PanelForDisplaying.setLayout(PanelForDisplayingLayout);
         PanelForDisplayingLayout.setHorizontalGroup(
             PanelForDisplayingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelForDisplayingLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(PanelForDisplayingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(DescriptionLabel)
-                    .addComponent(ScollPaneForPositioning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36))
+            .addGap(0, 876, Short.MAX_VALUE)
         );
         PanelForDisplayingLayout.setVerticalGroup(
             PanelForDisplayingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelForDisplayingLayout.createSequentialGroup()
-                .addContainerGap(434, Short.MAX_VALUE)
-                .addComponent(DescriptionLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ScollPaneForPositioning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
+            .addGap(0, 569, Short.MAX_VALUE)
         );
 
         InsertUserInputField.setBackground(new java.awt.Color(254, 254, 254));
@@ -195,6 +173,13 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         RedTreesLabel.setForeground(new java.awt.Color(152, 30, 50));
         RedTreesLabel.setText("Red");
 
+        DescriptionLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        DescriptionLabel.setForeground(new java.awt.Color(152, 30, 50));
+        DescriptionLabel.setText("Description");
+
+        jTextPane1.setEditable(false);
+        jScrollPane1.setViewportView(jTextPane1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -203,59 +188,75 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(PanelForDisplaying, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(InsertUserInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(InsertButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(SearchUserInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(SearchButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(DeleteUserInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(DeleteButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(PostOrderButton)
-                            .addComponent(PreOrderButton))
-                        .addGap(138, 138, 138))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(InOrderButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(TraverseButton)
-                        .addGap(34, 34, 34))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(RedTreesLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BlackTreesLabel)
-                .addGap(135, 135, 135)
-                .addComponent(TreeTraversalsLabel)
-                .addGap(118, 118, 118))
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(RedTreesLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BlackTreesLabel)
+                        .addGap(42, 42, 42)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(DescriptionLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(TreeTraversalsLabel)
+                                .addGap(118, 118, 118))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(InsertUserInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(InsertButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(SearchUserInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(SearchButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(DeleteUserInputField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(DeleteButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(PostOrderButton)
+                                    .addComponent(PreOrderButton))
+                                .addGap(138, 138, 138))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(InOrderButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(TraverseButton)
+                                .addGap(34, 34, 34))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(PanelForDisplaying, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(TreeTraversalsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(PreOrderButton)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(InOrderButton)
-                            .addComponent(TraverseButton))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(TreeTraversalsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(DescriptionLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(PreOrderButton)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(InOrderButton)
+                                    .addComponent(TraverseButton)))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(PostOrderButton))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BlackTreesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(RedTreesLabel))
@@ -267,7 +268,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
                             .addComponent(SearchButton)
                             .addComponent(DeleteUserInputField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DeleteButton))))
-                .addGap(73, 73, 73))
+                .addContainerGap())
         );
 
         pack();
@@ -377,12 +378,12 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
     private javax.swing.JRadioButton PostOrderButton;
     private javax.swing.JRadioButton PreOrderButton;
     private javax.swing.JLabel RedTreesLabel;
-    private javax.swing.JScrollPane ScollPaneForPositioning;
     private javax.swing.JButton SearchButton;
     private javax.swing.JTextField SearchUserInputField;
-    private javax.swing.JTextArea TextAreaForDescription;
     private javax.swing.ButtonGroup TraversalGroup;
     private javax.swing.JButton TraverseButton;
     private javax.swing.JLabel TreeTraversalsLabel;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }

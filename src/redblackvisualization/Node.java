@@ -21,7 +21,6 @@ public class Node {
   public UILine nodeLineRight;
   
   public Node() {
-      this.nodeCircle = new UICircle(data);
       this.nodeLineLeft = new UILine();
       this.nodeLineRight = new UILine();
   }
