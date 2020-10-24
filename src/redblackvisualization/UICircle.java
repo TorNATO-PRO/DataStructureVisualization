@@ -27,6 +27,7 @@ public final class UICircle {
     private final Color WSUred;
     private final Color WSUdarkGray;
     private final Color blank;
+    private Color storedColor;
     
     public UICircle(int xCoord, int yCoord,
             int data, Graphics gfx) {
@@ -53,12 +54,13 @@ public final class UICircle {
     }
     
     public void highlight() {
+        this.storedColor = gfx.getColor();
         gfx.setColor(Color.BLUE);
         drawCircle();
     }
     
     public void unHighlight() {
-        gfx.setColor(blank);
+        gfx.setColor(storedColor);
         drawCircle();
     }
     
