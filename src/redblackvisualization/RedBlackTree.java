@@ -2,8 +2,6 @@ package redblackvisualization;
 
 // Red Black Tree implementation in Java
 import java.awt.Graphics2D;
-import java.awt.Paint;
-import javax.swing.JPanel;
 
 // Author: Algorithm Tutor
 // Tutorial URL: https://algorithmtutor.com/Data-Structures/Tree/Red-Black-Trees/
@@ -270,6 +268,7 @@ public class RedBlackTree {
     public void insert(int key) {
         UICircle ui = new UICircle(50, 50, key, canvasPanel);
         ui.highlight();
+        ui.deleteCircle();
         // Ordinary Binary Search Insertion
         Node node = new Node();
         node.parent = null;

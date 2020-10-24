@@ -7,7 +7,7 @@ package redblackvisualization;
 
 /**
  *
- * @author nathan
+ * @author Nathan Waltz (Adapted from Algorithm's Tutor)
  */
 public class Node {
     // data structure that represents a node in the tree
@@ -21,8 +21,15 @@ public class Node {
   public UILine nodeLineRight;
   
   public Node() {
-      this.nodeLineLeft = new UILine();
-      this.nodeLineRight = new UILine();
+      
   }
   
+  // TODO: Make the UICircle and UILine interfaces part and this class
+  // One in the same, 
+  
+  // TODO: Some form of scaling
+  
+  // TODO: Adding description to actions (Can be done in RedBlackTree)
+  // with passed gfx field :)
+
 }

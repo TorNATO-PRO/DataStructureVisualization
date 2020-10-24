@@ -7,18 +7,14 @@ package redblackvisualization;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.List;
-import java.util.ArrayList;
-import java.util.Iterator;
-import javax.swing.AbstractButton;
 
 /**
  *
  * @author nathan
  */
 public class JFrameRedBlackTrees extends javax.swing.JFrame {
-    
-    private RedBlackTree rbTree;
+
+    private final RedBlackTree rbTree;
 
     /**
      * Creates new form JFrameRedBlackTrees
@@ -275,35 +271,43 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
-        // TODO add your handling code here:
-        int DeleteThis = Integer.parseInt(DeleteUserInputField.getText());
-        DeleteUserInputField.setText("");
-        rbTree.deleteNode(DeleteThis);
+        try {
+            int DeleteThis = Integer.parseInt(DeleteUserInputField.getText());
+            DeleteUserInputField.setText("");
+            rbTree.deleteNode(DeleteThis);
+        } catch (NumberFormatException exception) {
+            DeleteUserInputField.setText("");
+        }
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
     private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
-        // TODO add your handling code here:
-        int SearchThis = Integer.parseInt(SearchUserInputField.getText());
-        SearchUserInputField.setText("");
-        rbTree.searchTree(SearchThis);
+        try {
+            int SearchThis = Integer.parseInt(SearchUserInputField.getText());
+            SearchUserInputField.setText("");
+            rbTree.searchTree(SearchThis);
+        } catch (NumberFormatException exception) {
+            SearchUserInputField.setText("");
+        }
     }//GEN-LAST:event_SearchButtonActionPerformed
 
     private void InsertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertButtonActionPerformed
-        // TODO add your handling code here:
-        int InsertThis = Integer.parseInt(InsertUserInputField.getText());
-        InsertUserInputField.setText("");
-        rbTree.insert(InsertThis);
+        try {
+            int InsertThis = Integer.parseInt(InsertUserInputField.getText());
+            InsertUserInputField.setText("");
+            rbTree.insert(InsertThis);
+        } catch (NumberFormatException exception) {
+            InsertUserInputField.setText("");
+        }
     }//GEN-LAST:event_InsertButtonActionPerformed
 
     private void TraverseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraverseButtonActionPerformed
-        // TODO add your handling code here:
         if (PreOrderButton.isSelected()) {
             rbTree.preorder();
-        } else if (InOrderButton.isSelected()) { 
+        } else if (InOrderButton.isSelected()) {
             rbTree.inorder();
         } else if (PostOrderButton.isSelected()) {
             rbTree.postorder();
-        }    
+        }
     }//GEN-LAST:event_TraverseButtonActionPerformed
 
     private void InOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InOrderButtonActionPerformed
@@ -330,6 +334,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         super.paintComponents(g);
         g.draw3DRect(10, 10, 20, 0, true);
     }
+
     /**
      * @param args the command line arguments
      */
@@ -363,7 +368,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
                 new JFrameRedBlackTrees().setVisible(true);
             }
         });
-        
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -7,21 +7,26 @@ package redblackvisualization;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Stroke;
+
+
+// Well, my tests worked, now we need to mesh this with our data structure
+// Maybe we could turn this into and interface and implement it in our
+// node class? Maybe we could also transfer UILine's code to here
 
 /**
  *
  * @author nathan
  */
-public class UICircle {
+public final class UICircle {
     public int radius;
     public int xCoord;
     public int yCoord;
     private final int data;
-    private Graphics gfx;
-    private Color WSUred;
-    private Color WSUdarkGray;
-    private Color blank;
-    private Color WSUlightGray;
+    private final Graphics gfx;
+    private final Color WSUred;
+    private final Color WSUdarkGray;
+    private final Color blank;
     
     public UICircle(int xCoord, int yCoord,
             int data, Graphics gfx) {
@@ -31,11 +36,9 @@ public class UICircle {
         this.data = data;
         this.WSUred = new Color(152, 30, 50); // WSU red
         this.WSUdarkGray = new Color(83, 86, 90); // WSU red
-        this.WSUlightGray = new Color(167, 169, 172);
         this.blank = Color.WHITE;
         this.gfx = gfx;
         setRed();
-        drawData();
     }
     
     // red = 1, black = 0
@@ -50,13 +53,13 @@ public class UICircle {
     }
     
     public void highlight() {
-        gfx.setColor(WSUlightGray);
-        drawOutline();
+        gfx.setColor(Color.BLUE);
+        drawCircle();
     }
     
     public void unHighlight() {
         gfx.setColor(blank);
-        drawOutline();
+        drawCircle();
     }
     
     public int getRadius() {
@@ -69,16 +72,18 @@ public class UICircle {
     
     private void drawCircle() {
         gfx.fillOval(xCoord, yCoord, radius * 2, radius * 2);
-    }
-    
-    private void drawOutline() {
-        gfx.drawOval(xCoord, yCoord, radius * 2, radius * 2);
+        drawData();
     }
     
     private void drawData() {
         gfx.setColor(blank);
-        gfx.drawString("" + data, xCoord + radius - numLength() * 2, 
-                yCoord + radius);
+        gfx.drawString("" + data, xCoord + radius - numLength() * 3, 
+                yCoord + radius + numLength());
+    }
+    
+    public void deleteCircle() {
+        gfx.setColor(blank);
+        drawCircle();
     }
     
     private int numLength() {
@@ -89,6 +94,6 @@ public class UICircle {
             i++;
         }
         return i;
-    }
+    } // reeeeee
     
 }
