@@ -2,6 +2,8 @@ package redblackvisualization;
 
 // Red Black Tree implementation in Java
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
+import javax.swing.JTextPane;
 
 // Author: Algorithm Tutor
 // Tutorial URL: https://algorithmtutor.com/Data-Structures/Tree/Red-Black-Trees/
@@ -9,14 +11,19 @@ import java.awt.Graphics2D;
 public class RedBlackTree {
 
     private Node root;
-    private Node TNULL;
-    private Graphics2D canvasPanel;
+    private final Node TNULL;
+    private final Graphics2D canvasPanel;
+    private final JTextPane descriptPane;
+    private Rectangle canvasPanelBounds;
 
-    private void preOrderHelper(Node node) {
+    private void preOrderHelper(Node node, String s) 
+            throws InterruptedException {
         if (node != TNULL) {
+            s += node.data + " ";
+            descriptPane.setText(s);
             System.out.print(node.data + " ");
-            preOrderHelper(node.left);
-            preOrderHelper(node.right);
+            preOrderHelper(node.left, s);
+            preOrderHelper(node.right, s);
         }
     }
 
@@ -139,19 +146,22 @@ public class RedBlackTree {
     }
 
     //constructor
-    public RedBlackTree(Graphics2D drawingPanel) {
-        TNULL = new Node();
+    public RedBlackTree(Graphics2D drawingPanel, JTextPane descriptPane) {
+        TNULL = new Node(drawingPanel);
         TNULL.color = 0;
         TNULL.left = null;
         TNULL.right = null;
         root = TNULL;
         this.canvasPanel = drawingPanel;
+        this.descriptPane = descriptPane;
+        this.canvasPanelBounds = drawingPanel.getClipBounds();
     }
 
     // Pre-Order traversal
     // Node.Left Subtree.Right Subtree
-    public void preorder() {
-        preOrderHelper(this.root);
+    public void preorder() 
+            throws InterruptedException {
+        preOrderHelper(this.root, "");
     }
 
     // In-Order traversal
@@ -266,11 +276,8 @@ public class RedBlackTree {
     // insert the key to the tree in its appropriate position
     // and fix the tree
     public void insert(int key) {
-        UICircle ui = new UICircle(50, 50, key, canvasPanel);
-        ui.highlight();
-        ui.deleteCircle();
         // Ordinary Binary Search Insertion
-        Node node = new Node();
+        Node node = new Node(canvasPanel);
         node.parent = null;
         node.data = key;
         node.left = TNULL;
@@ -300,7 +307,7 @@ public class RedBlackTree {
         }
 
         // if new node is a root node, simply return
-        if (node.parent == null) {
+        if (node.parent == null) {            
             node.color = 0;
             return;
         }
@@ -326,6 +333,18 @@ public class RedBlackTree {
     // print the tree structure on the screen
     public void prettyPrint() {
         printHelper(this.root, "", true);
+    }
+    
+    private void executeHighlight() {
+        // TODO
+    }
+    
+    private void deleteCircle() {
+        // TODO
+    }
+    
+    private void deleteLine() {
+        // TODO
     }
 
 }

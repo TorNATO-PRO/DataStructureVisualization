@@ -7,6 +7,9 @@ package redblackvisualization;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JTextPane;
 
 /**
  *
@@ -21,7 +24,8 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
      */
     public JFrameRedBlackTrees() {
         initComponents();
-        this.rbTree = new RedBlackTree((Graphics2D) PanelForDisplaying.getGraphics());
+        this.rbTree = new RedBlackTree((Graphics2D) PanelForDisplaying.getGraphics(), 
+                DescriptionPane);
     }
 
     /**
@@ -42,7 +46,6 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         InOrderButton = new javax.swing.JRadioButton();
         PostOrderButton = new javax.swing.JRadioButton();
         TreeTraversalsLabel = new javax.swing.JLabel();
-        PanelForDisplaying = new javax.swing.JPanel();
         InsertUserInputField = new javax.swing.JTextField();
         DeleteUserInputField = new javax.swing.JTextField();
         SearchUserInputField = new javax.swing.JTextField();
@@ -50,12 +53,12 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         RedTreesLabel = new javax.swing.JLabel();
         DescriptionLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        DescriptionPane = new javax.swing.JTextPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        PanelForDisplaying = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(900, 780));
         setMinimumSize(new java.awt.Dimension(900, 780));
-        setPreferredSize(new java.awt.Dimension(900, 780));
         setResizable(false);
         setSize(new java.awt.Dimension(900, 780));
 
@@ -123,19 +126,6 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         TreeTraversalsLabel.setLabelFor(PreOrderButton);
         TreeTraversalsLabel.setText("Tree Traversals");
 
-        PanelForDisplaying.setBackground(new java.awt.Color(254, 254, 254));
-
-        javax.swing.GroupLayout PanelForDisplayingLayout = new javax.swing.GroupLayout(PanelForDisplaying);
-        PanelForDisplaying.setLayout(PanelForDisplayingLayout);
-        PanelForDisplayingLayout.setHorizontalGroup(
-            PanelForDisplayingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 876, Short.MAX_VALUE)
-        );
-        PanelForDisplayingLayout.setVerticalGroup(
-            PanelForDisplayingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 569, Short.MAX_VALUE)
-        );
-
         InsertUserInputField.setBackground(new java.awt.Color(254, 254, 254));
         InsertUserInputField.setToolTipText("");
         InsertUserInputField.addActionListener(new java.awt.event.ActionListener() {
@@ -173,17 +163,28 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         DescriptionLabel.setForeground(new java.awt.Color(152, 30, 50));
         DescriptionLabel.setText("Description");
 
-        jTextPane1.setEditable(false);
-        jScrollPane1.setViewportView(jTextPane1);
+        DescriptionPane.setEditable(false);
+        jScrollPane1.setViewportView(DescriptionPane);
+
+        PanelForDisplaying.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout PanelForDisplayingLayout = new javax.swing.GroupLayout(PanelForDisplaying);
+        PanelForDisplaying.setLayout(PanelForDisplayingLayout);
+        PanelForDisplayingLayout.setHorizontalGroup(
+            PanelForDisplayingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        PanelForDisplayingLayout.setVerticalGroup(
+            PanelForDisplayingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 569, Short.MAX_VALUE)
+        );
+
+        jScrollPane2.setViewportView(PanelForDisplaying);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(PanelForDisplaying, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,13 +226,17 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(TraverseButton)
                                 .addGap(34, 34, 34))))))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(PanelForDisplaying, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -302,7 +307,11 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
 
     private void TraverseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraverseButtonActionPerformed
         if (PreOrderButton.isSelected()) {
-            rbTree.preorder();
+            try {
+                rbTree.preorder();
+            } catch (InterruptedException ex) {
+                Logger.getLogger(JFrameRedBlackTrees.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else if (InOrderButton.isSelected()) {
             rbTree.inorder();
         } else if (PostOrderButton.isSelected()) {
@@ -329,12 +338,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
     private void PostOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PostOrderButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PostOrderButtonActionPerformed
-
-    public void paintComponent(Graphics g) {
-        super.paintComponents(g);
-        g.draw3DRect(10, 10, 20, 0, true);
-    }
-
+    
     /**
      * @param args the command line arguments
      */
@@ -376,10 +380,11 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
     private javax.swing.JButton DeleteButton;
     private javax.swing.JTextField DeleteUserInputField;
     private javax.swing.JLabel DescriptionLabel;
+    private javax.swing.JTextPane DescriptionPane;
     private javax.swing.JRadioButton InOrderButton;
     private javax.swing.JButton InsertButton;
     private javax.swing.JTextField InsertUserInputField;
-    public javax.swing.JPanel PanelForDisplaying;
+    private javax.swing.JPanel PanelForDisplaying;
     private javax.swing.JRadioButton PostOrderButton;
     private javax.swing.JRadioButton PreOrderButton;
     private javax.swing.JLabel RedTreesLabel;
@@ -389,6 +394,6 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
     private javax.swing.JButton TraverseButton;
     private javax.swing.JLabel TreeTraversalsLabel;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }
