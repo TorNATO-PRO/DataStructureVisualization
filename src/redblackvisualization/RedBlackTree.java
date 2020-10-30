@@ -11,36 +11,37 @@ import javax.swing.JTextPane;
 public class RedBlackTree {
 
     private Node root;
-    private final Node TNULL;
+    private Node TNULL;
     private final Graphics2D canvasPanel;
     private final JTextPane descriptPane;
-    private Rectangle canvasPanelBounds;
+    private int panelWidth;
+    private int panelHeight;
 
-    private void preOrderHelper(Node node, String s) 
-            throws InterruptedException {
+    private StringBuilder preOrderHelper(Node node, StringBuilder s) {
         if (node != TNULL) {
-            s += node.data + " ";
-            descriptPane.setText(s);
-            System.out.print(node.data + " ");
+            s.append(node.data).append(" ");
             preOrderHelper(node.left, s);
             preOrderHelper(node.right, s);
         }
+        return s;
     }
 
-    private void inOrderHelper(Node node) {
+    private StringBuilder inOrderHelper(Node node, StringBuilder s) {
         if (node != TNULL) {
-            inOrderHelper(node.left);
-            System.out.print(node.data + " ");
-            inOrderHelper(node.right);
+            inOrderHelper(node.left, s);
+            s.append(node.data).append(" ");
+            inOrderHelper(node.right, s);
         }
+        return s;
     }
 
-    private void postOrderHelper(Node node) {
+    private StringBuilder postOrderHelper(Node node, StringBuilder s) {
         if (node != TNULL) {
-            postOrderHelper(node.left);
-            postOrderHelper(node.right);
-            System.out.print(node.data + " ");
+            postOrderHelper(node.left, s);
+            postOrderHelper(node.right, s);
+            s.append(node.data).append(" ");
         }
+        return s;
     }
 
     private Node searchTreeHelper(Node node, int key) {
@@ -126,27 +127,9 @@ public class RedBlackTree {
         root.color = 0;
     }
 
-    private void printHelper(Node root, String indent, boolean last) {
-        // print the tree structure on the screen
-        if (root != TNULL) {
-            System.out.print(indent);
-            if (last) {
-                System.out.print("R----");
-                indent += "     ";
-            } else {
-                System.out.print("L----");
-                indent += "|    ";
-            }
-
-            String sColor = root.color == 1 ? "RED" : "BLACK";
-            System.out.println(root.data + "(" + sColor + ")");
-            printHelper(root.left, indent, false);
-            printHelper(root.right, indent, true);
-        }
-    }
-
     //constructor
-    public RedBlackTree(Graphics2D drawingPanel, JTextPane descriptPane) {
+    public RedBlackTree(Graphics2D drawingPanel, JTextPane descriptPane, 
+            int panelWidth, int panelHeight) {
         TNULL = new Node(drawingPanel);
         TNULL.color = 0;
         TNULL.left = null;
@@ -154,26 +137,29 @@ public class RedBlackTree {
         root = TNULL;
         this.canvasPanel = drawingPanel;
         this.descriptPane = descriptPane;
-        this.canvasPanelBounds = drawingPanel.getClipBounds();
+        this.panelWidth = panelWidth;
+        this.panelHeight = panelHeight;
     }
 
     // Pre-Order traversal
     // Node.Left Subtree.Right Subtree
-    public void preorder() 
-            throws InterruptedException {
-        preOrderHelper(this.root, "");
+    public void preorder() {
+        descriptPane.setText(preOrderHelper(this.root, 
+                new StringBuilder()).toString());
     }
 
     // In-Order traversal
     // Left Subtree . Node . Right Subtree
     public void inorder() {
-        inOrderHelper(this.root);
+        descriptPane.setText(inOrderHelper(this.root, 
+                new StringBuilder()).toString());    
     }
 
     // Post-Order traversal
     // Left Subtree . Right Subtree . Node
     public void postorder() {
-        postOrderHelper(this.root);
+        descriptPane.setText(postOrderHelper(this.root, 
+                new StringBuilder()).toString());    
     }
 
     // search the tree for the key k
@@ -330,11 +316,6 @@ public class RedBlackTree {
         deleteNodeHelper(this.root, data);
     }
 
-    // print the tree structure on the screen
-    public void prettyPrint() {
-        printHelper(this.root, "", true);
-    }
-    
     private void executeHighlight() {
         // TODO
     }

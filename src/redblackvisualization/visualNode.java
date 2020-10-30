@@ -37,8 +37,12 @@ public interface visualNode {
     
     public void deleteCircle();
    
-    public void drawLine();
+    public void drawLeftLine();
     
-    public void deleteLine();
+    public void drawRightLine();
+    
+    public void deleteLeftLine();
+    
+    public void deleteRightLine();
     
 }

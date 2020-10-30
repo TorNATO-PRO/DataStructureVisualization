@@ -5,11 +5,9 @@
  */
 package redblackvisualization;
 
-import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JTextPane;
 
 /**
  *
@@ -24,8 +22,8 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
      */
     public JFrameRedBlackTrees() {
         initComponents();
-        this.rbTree = new RedBlackTree((Graphics2D) PanelForDisplaying.getGraphics(), 
-                DescriptionPane);
+        this.rbTree = new RedBlackTree((Graphics2D) this.PanelForDisplaying.getGraphics(), DescriptionPane,
+                PanelForDisplaying.getWidth(), PanelForDisplaying.getWidth());
     }
 
     /**
@@ -307,11 +305,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
 
     private void TraverseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraverseButtonActionPerformed
         if (PreOrderButton.isSelected()) {
-            try {
-                rbTree.preorder();
-            } catch (InterruptedException ex) {
-                Logger.getLogger(JFrameRedBlackTrees.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            rbTree.preorder();
         } else if (InOrderButton.isSelected()) {
             rbTree.inorder();
         } else if (PostOrderButton.isSelected()) {
