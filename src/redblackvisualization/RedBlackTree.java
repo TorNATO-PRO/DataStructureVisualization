@@ -1,6 +1,7 @@
 package redblackvisualization;
 
 // Red Black Tree implementation in Java
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import javax.swing.JTextPane;
@@ -14,7 +15,7 @@ public class RedBlackTree {
     private Node NIL; // the NIL node
     private final Graphics2D canvasPanel; // the panel that we are working with
     private final JTextPane descriptPane; // the description pane
-    private int[] centerCoordinates;
+    private final int[] centerCoordinates;
 
 
     private StringBuilder preOrderHelper(Node node, StringBuilder s) {
@@ -313,6 +314,12 @@ public class RedBlackTree {
     // delete the node from the tree
     public void deleteNode(int data) {
         deleteNodeHelper(this.root, data);
+    }
+    
+    private void clearPanel() {
+        canvasPanel.setColor(Color.WHITE);
+        canvasPanel.fillRect(0, 0, centerCoordinates[0] * 2,
+                centerCoordinates[1] * 2);
     }
 
 }
