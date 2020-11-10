@@ -4,14 +4,15 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
- * 
  * @author Nathan Waltz (Adapted from Algorithm's Tutor)
  * @author Allison Stansberry
  * @author Hunter McClure
  */
 public class Node implements visualNode {
 
-    // data structure that represents a node in the tree
+    private final Color WSUCrimson; // color object to represent WSU crimson!
+    private final Color WSUdarkGray; // color object to represent WSU dark gray!
+    private final Graphics gfx; // gfx object imported from the RedBlackTree class
     public int data; // holds the key
     public Node parent; // pointer to the parent
     public Node left; // pointer to left child
@@ -19,20 +20,16 @@ public class Node implements visualNode {
     public int color; // 1 . Red, 0 . Black
     public int xCoord; // xCoodinate of the Node
     public int yCoord; // yCoordinate of the Node
-    private final Color WSUCrimson; // color object to represent WSU crimson!
-    private final Color WSUdarkGray; // color object to represent WSU dark gray!
-    private final Graphics gfx; // gfx object imported from the RedBlackTree class
-    private int circleWidth; // width of the circle which represents the node
     public int nodeOffset; // distance from the parent node
+    private int circleWidth; // width of the circle which represents the node
     private Color nodeCurrentColor; // records the current color of the node
 
     /**
      * Node class constructor
-     * 
+     *
      * @param graphicsPanel - a graphics object which allows drawing on the canvas
-     * 
-     * Constructs the object
-     * 
+     *                      <p>
+     *                      Constructs the object
      */
     public Node(Graphics graphicsPanel) {
         this.WSUCrimson = new Color(152, 30, 50);
@@ -46,9 +43,8 @@ public class Node implements visualNode {
     // TODO: Some form of scaling
 
     /**
-     *
      * public method setRed()
-     * 
+     * <p>
      * Sets the node color to Red
      */
     @Override
@@ -61,7 +57,7 @@ public class Node implements visualNode {
 
     /**
      * public method setBlack()
-     * 
+     * <p>
      * Sets the node color to Black
      */
     @Override
@@ -74,7 +70,7 @@ public class Node implements visualNode {
 
     /**
      * public method setBlack()
-     * 
+     * <p>
      * Highlights the node
      */
     @Override
@@ -85,7 +81,7 @@ public class Node implements visualNode {
 
     /**
      * public method setBlack()
-     * 
+     * <p>
      * "un-Highlights the node"
      */
     @Override
@@ -97,11 +93,10 @@ public class Node implements visualNode {
 
     /**
      * public method getRadius()
-     * 
+     * <p>
      * a getter method for the circle width
-     * 
+     *
      * @return the circle width
-     * 
      */
     @Override
     public int getWidth() {
@@ -110,9 +105,9 @@ public class Node implements visualNode {
 
     /**
      * public method setWidth()
-     * 
+     * <p>
      * a setter method for the circle width
-     * 
+     *
      * @param newWidth - an integer representing the intended width of the circle
      */
     @Override
@@ -122,9 +117,8 @@ public class Node implements visualNode {
 
     /**
      * public method drawCircle()
-     * 
+     * <p>
      * a method to draw the circle
-     * 
      */
     @Override
     public void drawCircle() {
@@ -134,9 +128,8 @@ public class Node implements visualNode {
 
     /**
      * public method drawData()
-     * 
+     * <p>
      * a method to draw the data within the circle
-     * 
      */
     @Override
     public void drawData() {
@@ -146,9 +139,8 @@ public class Node implements visualNode {
 
     /**
      * public method deleteCircle()
-     * 
+     * <p>
      * a method to remove the circle from the canvas
-     * 
      */
     @Override
     public void deleteCircle() {
@@ -158,21 +150,19 @@ public class Node implements visualNode {
 
     /**
      * public method drawLeftLine()
-     * 
+     * <p>
      * a method to draw the left line of the circle, which points to a child node
-     * 
      */
     @Override
     public void drawLeftLine() {
-        drawLine(xCoord, yCoord + circleWidth, xCoord - nodeOffset, 
-            yCoord + circleWidth + nodeOffset); // tbh this shit needs to be worked on more
+        drawLine(xCoord, yCoord + circleWidth, xCoord - nodeOffset,
+                yCoord + circleWidth + nodeOffset); // tbh this shit needs to be worked on more
     }
 
     /**
      * public method drawRightLine()
-     * 
+     * <p>
      * a method to draw the right line of the circle, which points to a child node
-     * 
      */
     @Override
     public void drawRightLine() {
@@ -182,9 +172,8 @@ public class Node implements visualNode {
 
     /**
      * public method deleteRightLine()
-     * 
+     * <p>
      * a method to delete the right line of the circle
-     * 
      */
     @Override
     public void deleteRightLine() {
@@ -194,9 +183,8 @@ public class Node implements visualNode {
 
     /**
      * public method deleteLeftLie()
-     * 
+     * <p>
      * a method to delete the left line of the circle
-     * 
      */
     @Override
     public void deleteLeftLine() {
@@ -205,9 +193,8 @@ public class Node implements visualNode {
 
     /**
      * public method deleteLeftLie()
-     * 
+     * <p>
      * a private helper method to draw a line
-     * 
      */
     private void drawLine(int x1, int y1, int x2, int y2) {
         gfx.setColor(Color.BLACK);
@@ -216,9 +203,8 @@ public class Node implements visualNode {
 
     /**
      * public method deleteLeftLie()
-     * 
+     * <p>
      * a private helper method to delete a line
-     * 
      */
     private void deleteLine(int x1, int y1, int x2, int y2) {
         gfx.setColor(Color.WHITE);
