@@ -182,7 +182,7 @@ public class Node implements visualNode {
     }
 
     /**
-     * public method deleteLeftLie()
+     * private method deleteLeftLine()
      * <p>
      * a method to delete the left line of the circle
      */
@@ -192,7 +192,7 @@ public class Node implements visualNode {
     }
 
     /**
-     * public method deleteLeftLie()
+     * private method deleteLeftLine()
      * <p>
      * a private helper method to draw a line
      */
@@ -202,7 +202,7 @@ public class Node implements visualNode {
     }
 
     /**
-     * public method deleteLeftLie()
+     * private method deleteLeftLie()
      * <p>
      * a private helper method to delete a line
      */
