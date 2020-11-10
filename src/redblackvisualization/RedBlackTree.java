@@ -1,3 +1,5 @@
+// git link: https://github.com/TorNATO-PRO/DataStructureVisualization.git
+
 package redblackvisualization;
 
 // Red Black Tree implementation in Java
@@ -81,7 +83,7 @@ public class RedBlackTree {
                     node = NIL;
                 }
             } else {
-                
+                   // black case
             }
         }
     }
