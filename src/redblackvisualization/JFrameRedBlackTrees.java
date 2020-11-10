@@ -60,6 +60,10 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(900, 780));
 
+
+        /*
+        *   delete button formating and action setup
+        */
         DeleteButton.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         DeleteButton.setText("Delete");
         DeleteButton.addActionListener(new java.awt.event.ActionListener() {
@@ -68,6 +72,10 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
             }
         });
 
+
+        /*
+        *   search button formating and action setup
+        */
         SearchButton.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         SearchButton.setText("Search");
         SearchButton.addActionListener(new java.awt.event.ActionListener() {
@@ -76,6 +84,10 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
             }
         });
 
+
+        /*
+        *   insert button formating and action setup
+        */
         InsertButton.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         InsertButton.setText("Insert");
         InsertButton.addActionListener(new java.awt.event.ActionListener() {
@@ -84,6 +96,10 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
             }
         });
 
+
+        /*
+        *   traverse button formating and action setup
+        */ 
         TraverseButton.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         TraverseButton.setText("Traverse");
         TraverseButton.setName("Traverse"); // NOI18N
@@ -93,11 +109,17 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
             }
         });
 
+        /*
+        *   preorder traversal selection formating and action setup
+        */ 
         TraversalGroup.add(PreOrderButton);
         PreOrderButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         PreOrderButton.setForeground(new java.awt.Color(152, 30, 50));
         PreOrderButton.setText("Pre-Order");
 
+        /*
+        *   inorder traversal selection formating and action setup
+        */ 
         TraversalGroup.add(InOrderButton);
         InOrderButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         InOrderButton.setForeground(new java.awt.Color(152, 30, 50));
@@ -108,6 +130,9 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
             }
         });
 
+        /*
+        *   postorder traversal selection formating and action setup
+        */ 
         TraversalGroup.add(PostOrderButton);
         PostOrderButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         PostOrderButton.setForeground(new java.awt.Color(152, 30, 50));
@@ -118,12 +143,18 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
             }
         });
 
+        /*
+        *  tree traversal box text 
+        */  
         TreeTraversalsLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         TreeTraversalsLabel.setForeground(new java.awt.Color(83, 86, 90));
         TreeTraversalsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TreeTraversalsLabel.setLabelFor(PreOrderButton);
         TreeTraversalsLabel.setText("Tree Traversals");
 
+        /*
+        *   formating and action setup for user input box for insert 
+        */ 
         InsertUserInputField.setBackground(new java.awt.Color(254, 254, 254));
         InsertUserInputField.setToolTipText("");
         InsertUserInputField.addActionListener(new java.awt.event.ActionListener() {
@@ -132,6 +163,9 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
             }
         });
 
+        /*
+        *   formating and action setup for user input box for delete 
+        */ 
         DeleteUserInputField.setBackground(new java.awt.Color(254, 254, 254));
         DeleteUserInputField.setToolTipText("");
         DeleteUserInputField.addActionListener(new java.awt.event.ActionListener() {
@@ -140,6 +174,9 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
             }
         });
 
+        /*
+        *   formating and action setup for user input box for search 
+        */
         SearchUserInputField.setBackground(new java.awt.Color(254, 254, 254));
         SearchUserInputField.setToolTipText("");
         SearchUserInputField.addActionListener(new java.awt.event.ActionListener() {
@@ -148,6 +185,9 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
             }
         });
 
+        /*
+        *   visualization title text "Red-Black Trees"
+        */ 
         BlackTreesLabel.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         BlackTreesLabel.setForeground(new java.awt.Color(83, 86, 90));
         BlackTreesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -157,15 +197,27 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         RedTreesLabel.setForeground(new java.awt.Color(152, 30, 50));
         RedTreesLabel.setText("Red");
 
+        /*
+        *   header for discription box  
+        */ 
         DescriptionLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         DescriptionLabel.setForeground(new java.awt.Color(152, 30, 50));
         DescriptionLabel.setText("Description");
 
+         /*
+        *   text box for discription   
+        */ 
         DescriptionPane.setEditable(false);
         jScrollPane1.setViewportView(DescriptionPane);
 
+        /*
+        *   main display pannel 
+        */ 
         PanelForDisplaying.setBackground(new java.awt.Color(255, 255, 255));
 
+        /*
+        *   grouping chaos  
+        */ 
         javax.swing.GroupLayout PanelForDisplayingLayout = new javax.swing.GroupLayout(PanelForDisplaying);
         PanelForDisplaying.setLayout(PanelForDisplayingLayout);
         PanelForDisplayingLayout.setHorizontalGroup(
@@ -273,6 +325,13 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /*
+     * private method DeleteButtonActionPerformed()
+     * 
+     * deletes from tree the given user input, if invalid throws NumberFormatException
+     * 
+     * @param evt - a actionevent parameter that does performs an operation when an action has been performed by the user 
+     */
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
         try {
             int DeleteThis = Integer.parseInt(DeleteUserInputField.getText());
@@ -283,6 +342,13 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
+    /*
+     * private method SearchButtonActionPerformed()
+     * 
+     * searches for the given user input in the tree, if invalid throws NumberFormatException
+     * 
+     * @param evt - a actionevent parameter that does performs an operation when an action has been performed by the user
+     */
     private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
         try {
             int SearchThis = Integer.parseInt(SearchUserInputField.getText());
@@ -293,6 +359,13 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_SearchButtonActionPerformed
 
+     /*
+     * private method SearchButtonActionPerformed()
+     * 
+     * inserts the given user input into the tree, if invalid throws NumberFormatException
+     * 
+     * @param evt - a actionevent parameter that does performs an operation when an action has been performed by the user
+     */
     private void InsertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertButtonActionPerformed
         try {
             int InsertThis = Integer.parseInt(InsertUserInputField.getText());
@@ -303,6 +376,13 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_InsertButtonActionPerformed
 
+     /*
+     * private method TraverseButtonActionPerformed()
+     * 
+     * traverses through the tree with the user selected traversal method 
+     * 
+     * @param evt - a actionevent parameter that does performs an operation when an action has been performed by the user
+     */
     private void TraverseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraverseButtonActionPerformed
         if (PreOrderButton.isSelected()) {
             rbTree.preorder();
