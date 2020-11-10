@@ -56,25 +56,34 @@ public class RedBlackTree {
         return searchTreeHelper(node.right, key);
     }
 
-    // fix the rb tree modified by the delete operation
-    private void fixDelete(Node x) {
-
-    }
-
-    private void rbTransplant(Node u, Node v) {
-        if (u.parent == null) {
-            root = v;
-        } else if (u == u.parent.left) {
-            u.parent.left = v;
-        } else {
-            u.parent.right = v;
-        }
-        v.parent = u.parent;
-    }
-
     private void deleteNodeHelper(Node node, int key) {
-        // find the node containing key
-
+        Node intendedNode = searchTreeHelper(node, key);
+        int color = intendedNode.color;
+        if (color == 1 && intendedNode.left == NIL 
+                && intendedNode.right == NIL) { // red
+            node = NIL;
+        } else if (intendedNode.right == NIL || intendedNode.left == NIL) {
+            node = (intendedNode.left == NIL) ? intendedNode.right 
+                    : intendedNode.left;
+            node.color = 0;
+        } else {
+            Node temp = node.right;
+            Node left = node.left;
+            temp.right = node;
+            node = temp;
+            node.left = left; 
+            if (temp.color == 1) {
+                if (temp.left == NIL || temp.right == NIL) {
+                    node = (intendedNode.left == NIL) ? intendedNode.right 
+                        : intendedNode.left;
+                    node.color = 0;
+                } else {
+                    node = NIL;
+                }
+            } else {
+                
+            }
+        }
     }
 
     // fix the red-black tree
