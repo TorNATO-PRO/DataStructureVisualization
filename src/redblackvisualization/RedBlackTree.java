@@ -127,8 +127,7 @@ public class RedBlackTree {
     }
 
     //constructor
-    public RedBlackTree(Graphics2D drawingPanel, JTextPane descriptPane, 
-            int panelWidth, int panelHeight) {
+    public RedBlackTree(Graphics2D drawingPanel, JTextPane descriptPane) {
         NIL = new Node(drawingPanel);
         NIL.color = 0;
         NIL.left = null;
@@ -136,8 +135,6 @@ public class RedBlackTree {
         root = NIL;
         this.canvasPanel = drawingPanel;
         this.descriptPane = descriptPane;
-        this.panelWidth = panelWidth;
-        this.panelHeight = panelHeight;
     }
 
     // Pre-Order traversal

@@ -27,9 +27,9 @@ public interface visualNode {
     
     public void unHighlight();
     
-    public int getRadius();
+    public int getWidth();
     
-    public void setRadius(int newRadius);
+    public void setWidth(int newWidth);
     
     public void drawCircle();
     
