@@ -14,6 +14,7 @@ public class RedBlackTree {
     private Node NIL; // the NIL node
     private final Graphics2D canvasPanel; // the panel that we are working with
     private final JTextPane descriptPane; // the description pane
+    private int[] centerCoordinates;
 
 
     private StringBuilder preOrderHelper(Node node, StringBuilder s) {
@@ -127,7 +128,8 @@ public class RedBlackTree {
     }
 
     //constructor
-    public RedBlackTree(Graphics2D drawingPanel, JTextPane descriptPane) {
+    public RedBlackTree(Graphics2D drawingPanel, JTextPane descriptPane, int[] 
+            centerCoordinates) {
         NIL = new Node(drawingPanel);
         NIL.color = 0;
         NIL.left = null;
@@ -135,6 +137,7 @@ public class RedBlackTree {
         root = NIL;
         this.canvasPanel = drawingPanel;
         this.descriptPane = descriptPane;
+        this.centerCoordinates = centerCoordinates;
     }
 
     // Pre-Order traversal

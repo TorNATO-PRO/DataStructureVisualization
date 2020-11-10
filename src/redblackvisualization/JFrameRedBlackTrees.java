@@ -6,6 +6,7 @@
 package redblackvisualization;
 
 import java.awt.Graphics2D;
+import java.util.Vector;
 
 /**
  * @author Nathan Waltz
@@ -40,7 +41,10 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
      */
     public JFrameRedBlackTrees() {
         initComponents();
-        this.rbTree = new RedBlackTree((Graphics2D) this.PanelForDisplaying.getGraphics(), DescriptionPane);
+        int[] centerCoordinates = new int[2];
+        centerCoordinates[0] = PanelForDisplaying.getWidth() / 2; // x
+        centerCoordinates[1] = PanelForDisplaying.getHeight() / 2; // y
+        this.rbTree = new RedBlackTree((Graphics2D) this.PanelForDisplaying.getGraphics(), DescriptionPane, centerCoordinates);
     }
 
     /**
