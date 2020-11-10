@@ -42,11 +42,8 @@ public class Node implements visualNode {
         this.nodeCurrentColor = WSUdarkGray;
     }
 
-    // TODO: Make the UICircle and UILine interfaces part and this class
-    // One in the same,
+    // TODO: Bug testing, obviously
     // TODO: Some form of scaling
-    // TODO: Adding description to actions (Can be done in RedBlackTree)
-    // with passed gfx field :)
 
     /**
      *

@@ -10,15 +10,14 @@ import javax.swing.JTextPane;
 // class RedBlackTree implements the operations in Red Black Tree
 public class RedBlackTree {
 
-    private Node root;
-    private Node TNULL;
-    private final Graphics2D canvasPanel;
-    private final JTextPane descriptPane;
-    private int panelWidth;
-    private int panelHeight;
+    private Node root; // the root node
+    private Node NIL; // the NIL node
+    private final Graphics2D canvasPanel; // the panel that we are working with
+    private final JTextPane descriptPane; // the description pane
+
 
     private StringBuilder preOrderHelper(Node node, StringBuilder s) {
-        if (node != TNULL) {
+        if (node != NIL) {
             s.append(node.data).append(" ");
             preOrderHelper(node.left, s);
             preOrderHelper(node.right, s);
@@ -27,7 +26,7 @@ public class RedBlackTree {
     }
 
     private StringBuilder inOrderHelper(Node node, StringBuilder s) {
-        if (node != TNULL) {
+        if (node != NIL) {
             inOrderHelper(node.left, s);
             s.append(node.data).append(" ");
             inOrderHelper(node.right, s);
@@ -36,7 +35,7 @@ public class RedBlackTree {
     }
 
     private StringBuilder postOrderHelper(Node node, StringBuilder s) {
-        if (node != TNULL) {
+        if (node != NIL) {
             postOrderHelper(node.left, s);
             postOrderHelper(node.right, s);
             s.append(node.data).append(" ");
@@ -45,7 +44,7 @@ public class RedBlackTree {
     }
 
     private Node searchTreeHelper(Node node, int key) {
-        if (node == TNULL || key == node.data) {
+        if (node == NIL || key == node.data) {
             return node;
         }
 
@@ -130,11 +129,11 @@ public class RedBlackTree {
     //constructor
     public RedBlackTree(Graphics2D drawingPanel, JTextPane descriptPane, 
             int panelWidth, int panelHeight) {
-        TNULL = new Node(drawingPanel);
-        TNULL.color = 0;
-        TNULL.left = null;
-        TNULL.right = null;
-        root = TNULL;
+        NIL = new Node(drawingPanel);
+        NIL.color = 0;
+        NIL.left = null;
+        NIL.right = null;
+        root = NIL;
         this.canvasPanel = drawingPanel;
         this.descriptPane = descriptPane;
         this.panelWidth = panelWidth;
@@ -170,7 +169,7 @@ public class RedBlackTree {
 
     // find the node with the minimum key
     public Node minimum(Node node) {
-        while (node.left != TNULL) {
+        while (node.left != NIL) {
             node = node.left;
         }
         return node;
@@ -178,7 +177,7 @@ public class RedBlackTree {
 
     // find the node with the maximum key
     public Node maximum(Node node) {
-        while (node.right != TNULL) {
+        while (node.right != NIL) {
             node = node.right;
         }
         return node;
@@ -189,14 +188,14 @@ public class RedBlackTree {
         // if the right subtree is not null,
         // the successor is the leftmost node in the
         // right subtree
-        if (x.right != TNULL) {
+        if (x.right != NIL) {
             return minimum(x.right);
         }
 
         // else it is the lowest ancestor of x whose
         // left child is also an ancestor of x.
         Node y = x.parent;
-        while (y != TNULL && x == y.right) {
+        while (y != NIL && x == y.right) {
             x = y;
             y = y.parent;
         }
@@ -208,12 +207,12 @@ public class RedBlackTree {
         // if the left subtree is not null,
         // the predecessor is the rightmost node in the
         // left subtree
-        if (x.left != TNULL) {
+        if (x.left != NIL) {
             return maximum(x.left);
         }
 
         Node y = x.parent;
-        while (y != TNULL && x == y.left) {
+        while (y != NIL && x == y.left) {
             x = y;
             y = y.parent;
         }
@@ -225,7 +224,7 @@ public class RedBlackTree {
     public void leftRotate(Node x) {
         Node y = x.right;
         x.right = y.left;
-        if (y.left != TNULL) {
+        if (y.left != NIL) {
             y.left.parent = x;
         }
         y.parent = x.parent;
@@ -244,7 +243,7 @@ public class RedBlackTree {
     public void rightRotate(Node x) {
         Node y = x.left;
         x.left = y.right;
-        if (y.right != TNULL) {
+        if (y.right != NIL) {
             y.right.parent = x;
         }
         y.parent = x.parent;
@@ -266,14 +265,14 @@ public class RedBlackTree {
         Node node = new Node(canvasPanel);
         node.parent = null;
         node.data = key;
-        node.left = TNULL;
-        node.right = TNULL;
+        node.left = NIL;
+        node.right = NIL;
         node.color = 1; // new node must be red
 
         Node y = null;
         Node x = this.root;
 
-        while (x != TNULL) {
+        while (x != NIL) {
             y = x;
             if (node.data < x.data) {
                 x = x.left;
@@ -314,18 +313,6 @@ public class RedBlackTree {
     // delete the node from the tree
     public void deleteNode(int data) {
         deleteNodeHelper(this.root, data);
-    }
-
-    private void executeHighlight() {
-        // TODO
-    }
-    
-    private void deleteCircle() {
-        // TODO
-    }
-    
-    private void deleteLine() {
-        // TODO
     }
 
 }
