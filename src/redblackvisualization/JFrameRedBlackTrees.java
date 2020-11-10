@@ -11,7 +11,9 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author nathan
+ * @author Nathan Waltz
+ * @author Allison Stansberry
+ * @author Hunter McClure
  */
 public class JFrameRedBlackTrees extends javax.swing.JFrame {
 
