@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 /**
- *
+ * 
  * @author Nathan Waltz (Adapted from Algorithm's Tutor)
  * @author Allison Stansberry
  * @author Hunter McClure
@@ -26,8 +26,9 @@ public class Node implements visualNode {
     public int nodeOffset; // distance from the parent node
     private Color nodeCurrentColor; // records the current color of the node
 
-    /*
+    /**
      * Node class constructor
+     * 
      * @param graphicsPanel - a graphics object which allows drawing on the canvas
      * 
      * Constructs the object
@@ -42,12 +43,13 @@ public class Node implements visualNode {
     }
 
     // TODO: Make the UICircle and UILine interfaces part and this class
-    // One in the same, 
+    // One in the same,
     // TODO: Some form of scaling
     // TODO: Adding description to actions (Can be done in RedBlackTree)
     // with passed gfx field :)
 
-    /*
+    /**
+     *
      * public method setRed()
      * 
      * Sets the node color to Red
@@ -60,7 +62,7 @@ public class Node implements visualNode {
         drawData();
     }
 
-    /*
+    /**
      * public method setBlack()
      * 
      * Sets the node color to Black
@@ -73,7 +75,7 @@ public class Node implements visualNode {
         drawData();
     }
 
-    /*
+    /**
      * public method setBlack()
      * 
      * Highlights the node
@@ -84,7 +86,7 @@ public class Node implements visualNode {
         gfx.drawOval(xCoord, yCoord, circleWidth, circleWidth);
     }
 
-    /*
+    /**
      * public method setBlack()
      * 
      * "un-Highlights the node"
@@ -96,7 +98,7 @@ public class Node implements visualNode {
         drawData();
     }
 
-    /*
+    /**
      * public method getRadius()
      * 
      * a getter method for the circle width
@@ -109,7 +111,7 @@ public class Node implements visualNode {
         return circleWidth;
     }
 
-    /*
+    /**
      * public method setWidth()
      * 
      * a setter method for the circle width
@@ -121,8 +123,7 @@ public class Node implements visualNode {
         this.circleWidth = newWidth;
     }
 
-
-    /*
+    /**
      * public method drawCircle()
      * 
      * a method to draw the circle
@@ -134,7 +135,7 @@ public class Node implements visualNode {
         drawData();
     }
 
-    /*
+    /**
      * public method drawData()
      * 
      * a method to draw the data within the circle
@@ -146,7 +147,7 @@ public class Node implements visualNode {
         gfx.drawString("" + data, xCoord + circleWidth / 4, yCoord + circleWidth / 2);
     }
 
-    /*
+    /**
      * public method deleteCircle()
      * 
      * a method to remove the circle from the canvas
@@ -158,7 +159,7 @@ public class Node implements visualNode {
         gfx.fillOval(xCoord, yCoord, circleWidth, circleWidth);
     }
 
-    /*
+    /**
      * public method drawLeftLine()
      * 
      * a method to draw the left line of the circle, which points to a child node
@@ -166,11 +167,11 @@ public class Node implements visualNode {
      */
     @Override
     public void drawLeftLine() {
-        drawLine(xCoord, yCoord + circleWidth, xCoord - nodeOffset, yCoord 
-                + circleWidth + nodeOffset); // tbh this shit needs to be worked on more
+        drawLine(xCoord, yCoord + circleWidth, xCoord - nodeOffset, 
+            yCoord + circleWidth + nodeOffset); // tbh this shit needs to be worked on more
     }
 
-    /*
+    /**
      * public method drawRightLine()
      * 
      * a method to draw the right line of the circle, which points to a child node
@@ -178,11 +179,11 @@ public class Node implements visualNode {
      */
     @Override
     public void drawRightLine() {
-        drawLine(xCoord + circleWidth, yCoord + circleWidth, xCoord + circleWidth 
-                + nodeOffset, yCoord + circleWidth + nodeOffset); // same with all the line things, fuck
+        drawLine(xCoord + circleWidth, yCoord + circleWidth, xCoord + circleWidth + nodeOffset,
+                yCoord + circleWidth + nodeOffset); // same with all the line things, fuck
     }
 
-    /*
+    /**
      * public method deleteRightLine()
      * 
      * a method to delete the right line of the circle
@@ -190,11 +191,11 @@ public class Node implements visualNode {
      */
     @Override
     public void deleteRightLine() {
-        deleteLine(xCoord + circleWidth, yCoord + circleWidth, xCoord + circleWidth 
-                + nodeOffset, yCoord + circleWidth + nodeOffset); // same with all the line things, fuck
+        deleteLine(xCoord + circleWidth, yCoord + circleWidth, xCoord + circleWidth + nodeOffset,
+                yCoord + circleWidth + nodeOffset); // same with all the line things, fuck
     }
-    
-    /*
+
+    /**
      * public method deleteLeftLie()
      * 
      * a method to delete the left line of the circle
@@ -202,11 +203,10 @@ public class Node implements visualNode {
      */
     @Override
     public void deleteLeftLine() {
-        deleteLine(xCoord, yCoord + circleWidth, xCoord - nodeOffset, yCoord 
-                + circleWidth + nodeOffset); 
+        deleteLine(xCoord, yCoord + circleWidth, xCoord - nodeOffset, yCoord + circleWidth + nodeOffset);
     }
-    
-    /*
+
+    /**
      * public method deleteLeftLie()
      * 
      * a private helper method to draw a line
@@ -216,8 +216,8 @@ public class Node implements visualNode {
         gfx.setColor(Color.BLACK);
         gfx.drawLine(x1, y1, x2, y2);
     }
-    
-    /*
+
+    /**
      * public method deleteLeftLie()
      * 
      * a private helper method to delete a line
