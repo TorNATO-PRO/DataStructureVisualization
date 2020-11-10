@@ -6,8 +6,6 @@
 package redblackvisualization;
 
 import java.awt.Graphics2D;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * @author Nathan Waltz
@@ -17,7 +15,7 @@ import java.util.logging.Logger;
 public class JFrameRedBlackTrees extends javax.swing.JFrame {
 
     private final RedBlackTree rbTree;
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JLabel BlackTreesLabel;
     private javax.swing.JButton DeleteButton;
     private javax.swing.JTextField DeleteUserInputField;
@@ -358,7 +356,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
      *
      * @param evt - a actionevent parameter that does performs an operation when an action has been performed by the user
      */
-    private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
+    private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
         try {
             int DeleteThis = Integer.parseInt(DeleteUserInputField.getText());
             DeleteUserInputField.setText("");
@@ -375,7 +373,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
      *
      * @param evt - a actionevent parameter that does performs an operation when an action has been performed by the user
      */
-    private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
+    private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
         try {
             int SearchThis = Integer.parseInt(SearchUserInputField.getText());
             SearchUserInputField.setText("");
@@ -392,7 +390,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
      *
      * @param evt - a actionevent parameter that does performs an operation when an action has been performed by the user
      */
-    private void InsertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertButtonActionPerformed
+    private void InsertButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
         try {
             int InsertThis = Integer.parseInt(InsertUserInputField.getText());
             InsertUserInputField.setText("");
@@ -409,7 +407,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
      *
      * @param evt - a actionevent parameter that does performs an operation when an action has been performed by the user
      */
-    private void TraverseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraverseButtonActionPerformed
+    private void TraverseButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
         if (PreOrderButton.isSelected()) {
             rbTree.preorder();
         } else if (InOrderButton.isSelected()) {
@@ -418,5 +416,5 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
             rbTree.postorder();
         }
     }// GEN-LAST:event_TraverseButtonActionPerformed
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
