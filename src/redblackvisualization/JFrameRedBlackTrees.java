@@ -10,7 +10,7 @@ import java.awt.Graphics2D;
 /**
  * @author Nathan Waltz
  * @author Allison Stansberry
- * @author Hunter
+ * @author Hunter McClure
  */
 public class JFrameRedBlackTrees extends javax.swing.JFrame {
 
@@ -73,7 +73,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the form: created frame and made visible to audience*/
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new JFrameRedBlackTrees().setVisible(true);
