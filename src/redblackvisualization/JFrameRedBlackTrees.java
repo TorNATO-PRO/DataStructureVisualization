@@ -24,8 +24,7 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
      */
     public JFrameRedBlackTrees() {
         initComponents();
-        this.rbTree = new RedBlackTree((Graphics2D) this.PanelForDisplaying.getGraphics(), DescriptionPane,
-                PanelForDisplaying.getWidth(), PanelForDisplaying.getWidth());
+        this.rbTree = new RedBlackTree((Graphics2D) this.PanelForDisplaying.getGraphics(), DescriptionPane);
     }
 
     /**
@@ -105,21 +104,11 @@ public class JFrameRedBlackTrees extends javax.swing.JFrame {
         InOrderButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         InOrderButton.setForeground(new java.awt.Color(152, 30, 50));
         InOrderButton.setText("In-Order");
-        InOrderButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InOrderButtonActionPerformed(evt);
-            }
-        });
 
         TraversalGroup.add(PostOrderButton);
         PostOrderButton.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         PostOrderButton.setForeground(new java.awt.Color(152, 30, 50));
         PostOrderButton.setText("Post-Order");
-        PostOrderButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PostOrderButtonActionPerformed(evt);
-            }
-        });
 
         TreeTraversalsLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         TreeTraversalsLabel.setForeground(new java.awt.Color(83, 86, 90));
